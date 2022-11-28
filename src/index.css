@@ -5,6 +5,8 @@
 @import url(./blocks/nav/__links/nav__links.css);
 @import url(./blocks/nav/__links-item/nav__links-item.css);
 @import url(./blocks/nav/__link/nav__link.css);
+@import url(./blocks/content/content.css);
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

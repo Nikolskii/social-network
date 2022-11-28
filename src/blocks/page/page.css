@@ -2,4 +2,8 @@
   min-width: 320px;
   max-width: 1280px;
   margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'nav content';
 }

@@ -1,5 +1,6 @@
 import Header from './Header';
 import Navbar from './Navbar';
+import Profile from './Profile';
 import '../index.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="page">
       <Header />
       <Navbar />
+      <Profile />
     </div>
   );
 }
