@@ -1,9 +1,11 @@
+import MyPosts from './MyPosts/MyPosts';
 import classes from './Profile.module.css';
 
 function Profile() {
   return (
     <section className={classes.content}>
       <img
+        className={classes.profileBanner}
         src="https://of-crimea.ru/plug/Peschanye-plyazhi-Kryma.jpg"
         alt="banner"
       />
@@ -17,14 +19,7 @@ function Profile() {
           <p>Date of Birth: 5 april</p>
         </section>
       </section>
-      <section>
-        <h2>My posts</h2>
-        <h3>New post</h3>
-        <section className="my-posts">
-          <section>Post 1</section>
-          <section>Post 1</section>
-        </section>
-      </section>
+      <MyPosts />
     </section>
   );
 }
