@@ -11,6 +11,7 @@ function Profile() {
       />
       <section>
         <img
+          className={classes.avatar}
           src="https://avatars.githubusercontent.com/u/15583900?v=4"
           alt="avatar"
         />

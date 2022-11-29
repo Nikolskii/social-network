@@ -1,0 +1,10 @@
+.post {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.avatar {
+  width: 90px;
+  border-radius: 50%;
+}

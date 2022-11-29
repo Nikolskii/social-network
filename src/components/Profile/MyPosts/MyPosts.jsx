@@ -9,12 +9,9 @@ function MyPosts() {
         <textarea></textarea>
         <button>Add post</button>
       </section>
-      <section className="my-posts">
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+      <section className={classes.posts}>
+        <Post message="Hello, how are you?" />
+        <Post message="Its my first post" />
       </section>
     </section>
   );
