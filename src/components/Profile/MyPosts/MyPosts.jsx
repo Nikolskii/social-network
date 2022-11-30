@@ -1,7 +1,7 @@
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 
-function MyPosts() {
+const MyPosts = () => {
   return (
     <section>
       <h2>My posts</h2>
@@ -15,6 +15,6 @@ function MyPosts() {
       </section>
     </section>
   );
-}
+};
 
 export default MyPosts;

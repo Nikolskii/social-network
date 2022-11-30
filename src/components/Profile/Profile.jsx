@@ -1,9 +1,9 @@
 import MyPosts from './MyPosts/MyPosts';
 import classes from './Profile.module.css';
 
-function Profile() {
+const Profile = () => {
   return (
-    <section className={classes.content}>
+    <>
       <img
         className={classes.profileBanner}
         src="https://of-crimea.ru/plug/Peschanye-plyazhi-Kryma.jpg"
@@ -21,8 +21,8 @@ function Profile() {
         </section>
       </section>
       <MyPosts />
-    </section>
+    </>
   );
-}
+};
 
 export default Profile;

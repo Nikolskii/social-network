@@ -12,3 +12,8 @@
     'header header'
     'nav content';
 }
+
+.content {
+  grid-area: content;
+  width: 1070px;
+}

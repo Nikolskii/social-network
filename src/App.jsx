@@ -1,16 +1,20 @@
+import classes from './App.module.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import classes from './App.module.css';
+import Dialogs from './components/Dialogs/Dialogs';
 
-function App() {
+const App = () => {
   return (
     <div className={classes.page}>
       <Header />
       <Navbar />
-      <Profile />
+      <div className={classes.content}>
+        <Dialogs />
+        {/* <Profile /> */}
+      </div>
     </div>
   );
-}
+};
 
 export default App;

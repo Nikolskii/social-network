@@ -1,6 +1,6 @@
 import classes from './Header.module.css';
 
-function Header() {
+const Header = () => {
   return (
     <header className={classes.header}>
       <img
@@ -10,6 +10,6 @@ function Header() {
       />
     </header>
   );
-}
+};
 
 export default Header;

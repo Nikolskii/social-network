@@ -1,6 +1,6 @@
 import classes from './Post.module.css';
 
-function Post({ message }) {
+const Post = ({ message }) => {
   return (
     <section className={classes.post}>
       <img
@@ -11,6 +11,6 @@ function Post({ message }) {
       <p>{message}</p>
     </section>
   );
-}
+};
 
 export default Post;
