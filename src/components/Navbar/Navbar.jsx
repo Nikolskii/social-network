@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import classes from './Navbar.module.css';
 
 const Navbar = () => {
@@ -6,29 +6,29 @@ const Navbar = () => {
     <nav className={classes.nav}>
       <ul className={classes.nav__links}>
         <li>
-          <NavLink className={classes.nav__link} to="/profile">
+          <Link className={classes.nav__link} to="/profile">
             Profile
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink className={classes.nav__link} to="/dialogs">
+          <Link className={classes.nav__link} to="/dialogs">
             Messages
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink className={classes.nav__link} to="/news">
+          <Link className={classes.nav__link} to="/news">
             News
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink className={classes.nav__link} to="/music">
+          <Link className={classes.nav__link} to="/music">
             Music
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink className={classes.nav__link} to="/settings">
+          <Link className={classes.nav__link} to="/settings">
             Settings
-          </NavLink>
+          </Link>
         </li>
       </ul>
     </nav>

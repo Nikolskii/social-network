@@ -3,7 +3,7 @@ import classes from './Profile.module.css';
 
 const Profile = () => {
   return (
-    <>
+    <div>
       <img
         className={classes.profileBanner}
         src="https://of-crimea.ru/plug/Peschanye-plyazhi-Kryma.jpg"
@@ -21,7 +21,7 @@ const Profile = () => {
         </section>
       </section>
       <MyPosts />
-    </>
+    </div>
   );
 };
 
