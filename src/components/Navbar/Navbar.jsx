@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import classes from './Navbar.module.css';
 
 const Navbar = () => {
@@ -6,29 +6,54 @@ const Navbar = () => {
     <nav className={classes.nav}>
       <ul className={classes.nav__links}>
         <li>
-          <Link className={classes.nav__link} to="/profile">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.nav__link_active : classes.nav__link
+            }
+            to="profile"
+          >
             Profile
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link className={classes.nav__link} to="/dialogs">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.nav__link_active : classes.nav__link
+            }
+            to="dialogs"
+          >
             Messages
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link className={classes.nav__link} to="/news">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.nav__link_active : classes.nav__link
+            }
+            to="news"
+          >
             News
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link className={classes.nav__link} to="/music">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.nav__link_active : classes.nav__link
+            }
+            to="music"
+          >
             Music
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link className={classes.nav__link} to="/settings">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.nav__link_active : classes.nav__link
+            }
+            to="settings"
+          >
             Settings
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>

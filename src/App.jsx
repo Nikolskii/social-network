@@ -7,9 +7,7 @@ import Dialogs from './components/Dialogs/Dialogs';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
-import MainLayout from './components/MainLayout/MainLayout';
 import Content from './components/Content/Content';
-import { Outlet } from 'react-router-dom';
 
 const App = () => {
   return (
@@ -32,8 +30,8 @@ const App = () => {
             <Route path="news" element={<News />} />
             <Route path="music" element={<Music />} />
             <Route path="settings" element={<Settings />} />
-            <Route path="*" element={<h1>Not found</h1>} />
           </Route>
+          <Route path="*" element={<h1>Not found</h1>} />
         </Routes>
       </div>
     </BrowserRouter>
