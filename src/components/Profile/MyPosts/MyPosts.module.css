@@ -1,3 +1,9 @@
+.myPosts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .posts {
   display: flex;
   flex-direction: column;

@@ -3,15 +3,18 @@ import Post from './Post/Post';
 
 const MyPosts = () => {
   return (
-    <section>
+    <section className={classes.myPosts}>
       <h2>My posts</h2>
       <section>
-        <textarea></textarea>
+        <div>
+          <textarea></textarea>
+        </div>
         <button>Add post</button>
       </section>
       <section className={classes.posts}>
         <Post message="Hello, how are you?" />
         <Post message="Its my first post" />
+        <Post message="Ura ura ura" />
       </section>
     </section>
   );

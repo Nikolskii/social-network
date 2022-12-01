@@ -1,0 +1,22 @@
+.profileInfo {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    'banner banner'
+    'avatar info';
+}
+
+.profileBanner {
+  grid-area: banner;
+  width: 100%;
+  height: 200px;
+}
+
+.avatar {
+  grid-area: avatar;
+  width: 200px;
+}
+
+.info {
+  grid-area: info;
+}

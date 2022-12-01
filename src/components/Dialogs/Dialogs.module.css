@@ -1,0 +1,11 @@
+.dialogs {
+  display: flex;
+}
+
+.users {
+  width: 20%;
+}
+
+.messages {
+  width: 80%;
+}

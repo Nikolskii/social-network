@@ -26,7 +26,7 @@ const App = () => {
           >
             <Route index element={<Profile />} />
             <Route path="profile" element={<Profile />} />
-            <Route path="dialogs" element={<Dialogs />} />
+            <Route path="dialogs/*" element={<Dialogs />} />
             <Route path="news" element={<News />} />
             <Route path="music" element={<Music />} />
             <Route path="settings" element={<Settings />} />
@@ -39,23 +39,3 @@ const App = () => {
 };
 
 export default App;
-
-// const App = () => {
-//   return (
-//     <BrowserRouter>
-//       <div className={classes.page}>
-//         <Header />
-//         <Navbar />
-//         <div className={classes.content}>
-//           <Routes>
-//             <Route path="profile" element={<Profile />} />
-//             <Route path="dialogs" element={<Dialogs />} />
-//             <Route path="news" element={<News />} />
-//             <Route path="music" element={<Music />} />
-//             <Route path="settings" element={<Settings />} />
-//           </Routes>
-//         </div>
-//       </div>
-//     </BrowserRouter>
-//   );
-// };
