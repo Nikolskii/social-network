@@ -8,13 +8,24 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import MainLayout from './components/MainLayout/MainLayout';
+import Content from './components/Content/Content';
+import { Outlet } from 'react-router-dom';
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className={classes.page}>
         <Routes>
-          <Route path="/" element={<MainLayout />}>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <Navbar />
+                <Content />
+              </>
+            }
+          >
             <Route index element={<Profile />} />
             <Route path="profile" element={<Profile />} />
             <Route path="dialogs" element={<Dialogs />} />
