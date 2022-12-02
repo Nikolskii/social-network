@@ -1,12 +1,12 @@
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 
-const MyPosts = () => {
-  const postsData = [
-    { id: 1, message: 'Hello, how are you?', likesCount: 5 },
-    { id: 2, message: "It's my first post", likesCount: 0 },
-    { id: 3, message: 'Ura ura ura', likesCount: 10 },
-  ];
+const MyPosts = ({ postsData }) => {
+  // const postsData = [
+  //   { id: 1, message: 'Hello, how are you?', likesCount: 5 },
+  //   { id: 2, message: "It's my first post", likesCount: 0 },
+  //   { id: 3, message: 'Ura ura ura', likesCount: 10 },
+  // ];
 
   const posts = postsData.map((post) => (
     <Post message={post.message} likesCount={post.likesCount} key={post.id} />
