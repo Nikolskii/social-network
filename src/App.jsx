@@ -7,19 +7,17 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import MainLayout from './components/MainLayout/MainLayout';
 
-const App = ({ usersData, messagesData, postsData }) => {
+const App = ({ state }) => {
   return (
     <BrowserRouter>
       <div className={classes.page}>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route index element={<Profile postsData={postsData} />} />
-            <Route path="profile" element={<Profile postsData={postsData} />} />
+            <Route index element={<Profile state={state.profile} />} />
+            <Route path="profile" element={<Profile state={state.profile} />} />
             <Route
               path="dialogs/*"
-              element={
-                <Dialogs usersData={usersData} messagesData={messagesData} />
-              }
+              element={<Dialogs state={state.dialogs} />}
             />
             <Route path="news" element={<News />} />
             <Route path="music" element={<Music />} />
