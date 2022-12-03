@@ -8,22 +8,14 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import Content from './components/Content/Content';
+import MainLayout from './components/MainLayout/MainLayout';
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className={classes.page}>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Header />
-                <Navbar />
-                <Content />
-              </>
-            }
-          >
+          <Route path="/" element={<MainLayout />}>
             <Route index element={<Profile />} />
             <Route path="profile" element={<Profile />} />
             <Route path="dialogs/*" element={<Dialogs />} />
