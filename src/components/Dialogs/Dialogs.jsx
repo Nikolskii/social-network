@@ -1,3 +1,4 @@
+import React from 'react';
 import classes from './Dialogs.module.css';
 import Message from './Message/Message';
 import User from './User/User';
@@ -10,6 +11,13 @@ const Dialogs = ({ state }) => {
     <Message message={m.message} key={m.id} />
   ));
 
+  const newMessageElement = React.useRef();
+
+  const addMessage = () => {
+    const text = newMessageElement.current.value;
+    alert(text);
+  };
+
   return (
     <>
       <h1>Dialogs</h1>
@@ -17,6 +25,10 @@ const Dialogs = ({ state }) => {
         <section className={classes.users}>{users}</section>
         <section className={classes.messages}>{messages}</section>
       </section>
+      <div>
+        <textarea ref={newMessageElement}></textarea>
+      </div>
+      <button onClick={addMessage}>Add post</button>
     </>
   );
 };

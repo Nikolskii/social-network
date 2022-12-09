@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import classes from './App.module.css';
 import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
@@ -9,24 +9,19 @@ import MainLayout from './components/MainLayout/MainLayout';
 
 const App = ({ state }) => {
   return (
-    <BrowserRouter>
-      <div className={classes.page}>
-        <Routes>
-          <Route path="/" element={<MainLayout />}>
-            <Route index element={<Profile state={state.profile} />} />
-            <Route path="profile" element={<Profile state={state.profile} />} />
-            <Route
-              path="dialogs/*"
-              element={<Dialogs state={state.dialogs} />}
-            />
-            <Route path="news" element={<News />} />
-            <Route path="music" element={<Music />} />
-            <Route path="settings" element={<Settings />} />
-          </Route>
-          <Route path="*" element={<h1>Not found</h1>} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <div className={classes.page}>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Profile state={state.profile} />} />
+          <Route path="profile" element={<Profile state={state.profile} />} />
+          <Route path="dialogs/*" element={<Dialogs state={state.dialogs} />} />
+          <Route path="news" element={<News />} />
+          <Route path="music" element={<Music />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+        <Route path="*" element={<h1>Not found</h1>} />
+      </Routes>
+    </div>
   );
 };
 
