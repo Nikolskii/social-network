@@ -7,18 +7,30 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import MainLayout from './components/MainLayout/MainLayout';
 
-const App = ({ state, addPost }) => {
+const App = ({ state, addPost, updateNewPostText }) => {
   return (
     <div className={classes.page}>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route
             index
-            element={<Profile state={state.profilePage} addPost={addPost} />}
+            element={
+              <Profile
+                state={state.profilePage}
+                addPost={addPost}
+                updateNewPostText={updateNewPostText}
+              />
+            }
           />
           <Route
             path="profile"
-            element={<Profile state={state.profilePage} addPost={addPost} />}
+            element={
+              <Profile
+                state={state.profilePage}
+                addPost={addPost}
+                updateNewPostText={updateNewPostText}
+              />
+            }
           />
           <Route
             path="dialogs/*"
