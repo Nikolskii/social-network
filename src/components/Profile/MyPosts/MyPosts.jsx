@@ -2,16 +2,16 @@ import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 
-const MyPosts = ({ state }) => {
+const MyPosts = ({ state, addPost }) => {
   const posts = state.posts.map((post) => (
     <Post message={post.message} likesCount={post.likesCount} key={post.id} />
   ));
 
   const newPostElement = React.useRef();
 
-  const addPost = () => {
+  const addPostHandler = () => {
     const text = newPostElement.current.value;
-    alert(text);
+    addPost(text);
   };
 
   return (
@@ -21,7 +21,7 @@ const MyPosts = ({ state }) => {
         <div>
           <textarea ref={newPostElement}></textarea>
         </div>
-        <button onClick={addPost}>Add post</button>
+        <button onClick={addPostHandler}>Add post</button>
       </section>
       <section className={classes.posts}>{posts}</section>
     </section>
