@@ -2,6 +2,10 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import Message from './Message/Message';
 import User from './User/User';
+import {
+  sendMessageActionCreator,
+  updateNewMessageTextActionCreator,
+} from '../../redux/state';
 
 const Dialogs = (props) => {
   const users = props.state.users.map((u) => (
@@ -11,11 +15,14 @@ const Dialogs = (props) => {
     <Message message={m.message} key={m.id} />
   ));
 
-  const newMessageElement = React.useRef();
-
   const addMessage = () => {
-    const text = newMessageElement.current.value;
-    alert(text);
+    props.dispatch(sendMessageActionCreator());
+  };
+
+  const onMessageChange = (e) => {
+    const text = e.target.value;
+    const action = updateNewMessageTextActionCreator(text);
+    props.dispatch(action);
   };
 
   return (
@@ -26,7 +33,11 @@ const Dialogs = (props) => {
         <section className={classes.messages}>{messages}</section>
       </section>
       <div>
-        <textarea ref={newMessageElement}></textarea>
+        <textarea
+          placeholder="Enter your message text"
+          onChange={onMessageChange}
+          value={props.state.newMessageText}
+        ></textarea>
       </div>
       <button onClick={addMessage}>Add post</button>
     </>
