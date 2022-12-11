@@ -7,7 +7,7 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import MainLayout from './components/MainLayout/MainLayout';
 
-const App = ({ state, addPost, updateNewPostText }) => {
+const App = (props) => {
   return (
     <div className={classes.page}>
       <Routes>
@@ -16,9 +16,9 @@ const App = ({ state, addPost, updateNewPostText }) => {
             index
             element={
               <Profile
-                state={state.profilePage}
-                addPost={addPost}
-                updateNewPostText={updateNewPostText}
+                state={props.state.profilePage}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
               />
             }
           />
@@ -26,15 +26,15 @@ const App = ({ state, addPost, updateNewPostText }) => {
             path="profile"
             element={
               <Profile
-                state={state.profilePage}
-                addPost={addPost}
-                updateNewPostText={updateNewPostText}
+                state={props.state.profilePage}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
               />
             }
           />
           <Route
             path="dialogs/*"
-            element={<Dialogs state={state.dialogsPage} />}
+            element={<Dialogs state={props.state.dialogsPage} />}
           />
           <Route path="news" element={<News />} />
           <Route path="music" element={<Music />} />

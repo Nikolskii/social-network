@@ -2,20 +2,20 @@ import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 
-const MyPosts = ({ state, addPost, updateNewPostText }) => {
-  const posts = state.posts.map((post) => (
+const MyPosts = (props) => {
+  const posts = props.posts.map((post) => (
     <Post message={post.message} likesCount={post.likesCount} key={post.id} />
   ));
 
   const newPostElement = React.useRef();
 
   const addPostHandler = () => {
-    addPost();
+    props.addPost();
   };
 
   const onPostChange = () => {
     const text = newPostElement.current.value;
-    updateNewPostText(text);
+    props.updateNewPostText(text);
   };
 
   return (
@@ -26,7 +26,7 @@ const MyPosts = ({ state, addPost, updateNewPostText }) => {
           <textarea
             ref={newPostElement}
             onChange={onPostChange}
-            value={state.newPostText}
+            value={props.newPostText}
           />
         </div>
         <button onClick={addPostHandler}>Add post</button>

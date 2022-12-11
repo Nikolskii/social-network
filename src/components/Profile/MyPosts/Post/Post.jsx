@@ -1,6 +1,6 @@
 import classes from './Post.module.css';
 
-const Post = ({ message, likesCount }) => {
+const Post = (props) => {
   return (
     <section className={classes.post}>
       <img
@@ -9,8 +9,8 @@ const Post = ({ message, likesCount }) => {
         alt="Avatar"
       ></img>
       <div>
-        <p>{message}</p>
-        <p>Likes Count: {likesCount}</p>
+        <p>{props.message}</p>
+        <p>Likes Count: {props.likesCount}</p>
       </div>
     </section>
   );
