@@ -5,7 +5,7 @@ import User from './User/User';
 import {
   sendMessageActionCreator,
   updateNewMessageTextActionCreator,
-} from '../../redux/state';
+} from '../../redux/dialogs-reducer';
 
 const Dialogs = (props) => {
   const users = props.state.users.map((u) => (
