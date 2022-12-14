@@ -1,43 +1,22 @@
 import { Routes, Route } from 'react-router-dom';
 import classes from './App.module.css';
 import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import MainLayout from './components/MainLayout/MainLayout';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 const App = (props) => {
   return (
     <div className={classes.page}>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route
-            index
-            element={
-              <Profile
-                state={props.state.profilePage}
-                dispatch={props.dispatch}
-              />
-            }
-          />
-          <Route
-            path="profile"
-            element={
-              <Profile
-                state={props.state.profilePage}
-                dispatch={props.dispatch}
-              />
-            }
-          />
+          <Route index element={<Profile store={props.store} />} />
+          <Route path="profile" element={<Profile store={props.store} />} />
           <Route
             path="dialogs/*"
-            element={
-              <Dialogs
-                state={props.state.dialogsPage}
-                dispatch={props.dispatch}
-              />
-            }
+            element={<DialogsContainer store={props.store} />}
           />
           <Route path="news" element={<News />} />
           <Route path="music" element={<Music />} />

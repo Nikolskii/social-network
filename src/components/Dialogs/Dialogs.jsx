@@ -2,27 +2,24 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import Message from './Message/Message';
 import User from './User/User';
-import {
-  sendMessageActionCreator,
-  updateNewMessageTextActionCreator,
-} from '../../redux/dialogs-reducer';
 
 const Dialogs = (props) => {
-  const users = props.state.users.map((u) => (
+  const state = props.dialogsPage;
+
+  const users = state.users.map((u) => (
     <User name={u.name} id={u.id} key={u.id} />
   ));
-  const messages = props.state.messages.map((m) => (
+  const messages = state.messages.map((m) => (
     <Message message={m.message} key={m.id} />
   ));
 
-  const addMessage = () => {
-    props.dispatch(sendMessageActionCreator());
+  const onAddMessage = () => {
+    props.onSendMessage();
   };
 
-  const onMessageChange = (e) => {
+  const onNewMessageChange = (e) => {
     const text = e.target.value;
-    const action = updateNewMessageTextActionCreator(text);
-    props.dispatch(action);
+    props.updateNewMessageText(text);
   };
 
   return (
@@ -35,11 +32,11 @@ const Dialogs = (props) => {
       <div>
         <textarea
           placeholder="Enter your message text"
-          onChange={onMessageChange}
-          value={props.state.newMessageText}
+          onChange={onNewMessageChange}
+          value={state.newMessageText}
         ></textarea>
       </div>
-      <button onClick={addMessage}>Add post</button>
+      <button onClick={onAddMessage}>Add post</button>
     </>
   );
 };
